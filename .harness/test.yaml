@@ -34,10 +34,12 @@ pipeline:
                     shell: Sh
                     command: |-
                       # build
-                      git clone https://github.com/ggerganov/wave-share
                       cd wave-share && mkdir build && cd build
                       cmake ..
                       make
+
+                      # running
+                      ./wave-share
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
