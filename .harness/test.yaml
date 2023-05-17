@@ -34,6 +34,13 @@ pipeline:
                     shell: Sh
                     command: npm install
               - step:
+                  type: Run
+                  name: Run_2
+                  identifier: Run_2
+                  spec:
+                    shell: Sh
+                    command: /bin/sh -c apt-get update && apt-get -y install
+              - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
