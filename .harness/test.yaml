@@ -35,3 +35,12 @@ pipeline:
                     command: |-
                       npm install
                       npm start
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: buildtest
+                    repo: persia2309/harness-deploy-test
+                    tags:
+                      - deploy
