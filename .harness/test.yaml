@@ -7,8 +7,8 @@ pipeline:
   properties:
     ci:
       codebase:
-        connectorRef: firefox_send
-        repoName: send
+        connectorRef: waveshare
+        repoName: wave-share
         build: <+input>
   stages:
     - stage:
@@ -32,7 +32,12 @@ pipeline:
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: npm install
+                    command: |-
+                      # build
+                      git clone https://github.com/ggerganov/wave-share
+                      cd wave-share && mkdir build && cd build
+                      cmake ..
+                      make
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
