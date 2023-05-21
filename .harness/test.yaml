@@ -8,7 +8,6 @@ pipeline:
     ci:
       codebase:
         connectorRef: waveshare
-        repoName: wave-share
         build: <+input>
   stages:
     - stage:
@@ -33,7 +32,6 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |-
-                      # build
                       cd wave-share && mkdir build && cd build
                       cmake ..
                       make
