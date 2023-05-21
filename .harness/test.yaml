@@ -31,13 +31,11 @@ pipeline:
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: |-
-                      cd wave-share && mkdir build && cd build
+                    command: |+
+
                       cmake ..
                       make
 
-                      # running
-                      ./wave-share
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
