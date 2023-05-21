@@ -7,7 +7,8 @@ pipeline:
   properties:
     ci:
       codebase:
-        connectorRef: waveshare
+        connectorRef: waveshare1
+        repoName: wave-share
         build: <+input>
   stages:
     - stage:
@@ -31,11 +32,9 @@ pipeline:
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: |+
+                    command: |
 
-                      cmake ..
-                      make
-
+                      ./wave-share
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
