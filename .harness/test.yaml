@@ -40,7 +40,7 @@ pipeline:
                   name: BuildAndPushDockerRegistry_1
                   identifier: BuildAndPushDockerRegistry_1
                   spec:
-                    connectorRef: buildtest
+                    connectorRef: dockerpersia
                     repo: persia2309/harness-deploy-test
                     tags:
                       - deploy
