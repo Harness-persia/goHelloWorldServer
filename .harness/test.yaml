@@ -33,8 +33,7 @@ pipeline:
                   spec:
                     shell: Sh
                     command: |
-
-                      ./wave-share
+                      make
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
