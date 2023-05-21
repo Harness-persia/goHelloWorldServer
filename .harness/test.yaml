@@ -7,8 +7,8 @@ pipeline:
   properties:
     ci:
       codebase:
-        connectorRef: waveshare1
-        repoName: wave-share
+        connectorRef: nodegoat
+        repoName: NodeGoat
         build: <+input>
   stages:
     - stage:
@@ -32,8 +32,9 @@ pipeline:
                   identifier: Run_1
                   spec:
                     shell: Sh
-                    command: |
-                      make
+                    command: |-
+                      npm install
+                      npm build
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
