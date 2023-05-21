@@ -34,7 +34,7 @@ pipeline:
                     shell: Sh
                     command: |-
                       npm install
-                      npm build
+                      npm run test
               - step:
                   type: BuildAndPushDockerRegistry
                   name: BuildAndPushDockerRegistry_1
